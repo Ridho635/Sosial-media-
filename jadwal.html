@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jadwal live</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="running-text">
+        <p>jadwal live streaming youtube</p>
+      </div>
+      <div class="clock" id="clock"></div>
+    </div>
+    <div class="judul">
+      <p>jadwal live streaming</p>
+    </div>
+    <div class="background-selector">
+      <label for="background-select">Pilih Background:</label>
+      <select id="background-select">
+        <option value="Background/aset1.jpg">Background 1</option>
+        <option value="Background/aset2.jpg">Background 2</option>
+        <option value="Background/aset3.jpg">Background 3</option>
+      </select>
+    </div>
+    <div class="sosial-media">
+      <a href="http://www.youtube.com/@ridhomaulana02">cek langsung youtubeku</a>
+    </div>
+    <div class="sosial-media">
+      <a href="index.html">link sosial media</a>
+    </div>
+    <div class="donasi-container">
+        <a href="https://saweria.co/ridhomaulana02" class="donasi-button" target="_blank">Donasi Sekarang</a>
+        <div class="donasi-text">Saweria</div>
+    </div>
+    <div class="footer">
+      © 2024 Ridho
+    </div>
+    
+    <script>
+      function updateClock() {
+        const clockElement = document.getElementById('clock');
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        clockElement.textContent = `${hours}:${minutes}:${seconds} WIB`;
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+      const backgroundSelect = document.getElementById('background-select');
+      backgroundSelect.addEventListener('change', function() {
+        document.body.style.backgroundImage = `url(${this.value})`;
+      });
+    </script>
+  </body>
+</html>
